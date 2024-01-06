@@ -1,0 +1,65 @@
+﻿@model DoAnLTWeb2.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>Chỉnh sửa món</h2>
+    </div>
+    <!--Begin Form-->
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="ProductID" />
+        <div class="form-row">
+
+            <div class="form-group col-md-12">
+                <label asp-for="Name">Tên món</label>
+                <input type="text" class="form-control mb-3" asp-for="Name">
+            </div>
+
+            <div class="form-group col-md-12">
+                <label asp-for="Detail">Chi tiết</label>
+                <input type="text" class="form-control mb-3" asp-for="Detail">
+            </div>
+
+            <div class="from-group col-md-12">
+                <label class="control-lable">Ảnh</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-success" type="button" onclick="openDialog()">Chọn 1 ảnh</button>
+                    </div>
+                    <input type="text" class="form-control" asp-for="Image" id="file_input" aria-describedby="button-addon2">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="Price">Giá(VNĐ)</label>
+                <input type="text" class="form-control mb-3" asp-for="Price">
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="CateProductID">Chọn loại món</label>
+                <select asp-for="CateProductID" class="form-control" asp-items="ViewBag.CateProductID">
+                    <option value="0" selected>Chọn loại món</option>
+                </select>
+
+            </div>
+
+            <div class="form-group col-md-6 mt-3 mb-3">
+                <label class="btn btn-group-sm" style="background-color:0A7744;color: white">
+                    @Html.CheckBox("IsActive", false)
+                    Hiện thị
+                </label>
+            </div>
+
+        </div>
+        <a asp-controller="Products" asp-action="Index" class="btn btn-lg btn-warning" p-2>Quay lại</a>
+        <button type="submit" value="Save" class="btn btn-lg btn-primary p-2"><i class="bi bi-clipboard-plus"></i>Lưu</button>
+    </form>
+</main>
+
+
+@{
+    var summernote = new DoAnLTWeb2.Areas.Admin.Models.Summernote("#Contents");
+
+}
+<partial name="_Summernote" model="summernote" />

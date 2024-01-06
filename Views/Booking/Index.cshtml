@@ -1,0 +1,73 @@
+﻿@model DoAnLTWeb2.Models.Booking
+
+
+<!-- Hero Start -->
+<div class="container-fluid bg-light py-6 my-6 mt-0">
+    <div class="container text-center animated bounceInDown">
+        <h1 class="display-1 mb-4">Đặt bàn</h1>
+        <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
+            <li class="breadcrumb-item"><a href="/Home">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item text-dark" aria-current="page">Đặt bàn</li>
+        </ol>
+    </div>
+</div>
+<!-- Hero End -->
+<!-- Book Us Start -->
+<div class="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-1">
+                <img src="img/background-site.jpg" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover; opacity: 0.7;" alt="">
+            </div>
+            <div class="col-10">
+                <div class="border-bottom border-top border-primary bg-light py-5 px-4">
+                    <div class="text-center">
+                        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Đặt bàn ngay</small>
+                        <h1 class="display-5 mb-5">Điền thông tin đặt bàn</h1>
+                    </div>                       
+
+                        <form asp-action="Index">
+                        <div class="row g-4 form">
+
+                        <div class="col-lg-4 col-md-6">
+                            <input asp-for="CusName" type="mobile" class="form-control border-primary p-2" placeholder="Tên của bạn">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input asp-for="Phone" type="mobile" class="form-control border-primary p-2" placeholder="Số điện thoại">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input asp-for="Email" type="email" class="form-control border-primary p-2" placeholder="Email của bạn">
+                        </div>
+						<div class="col-lg-4 col-md-6">
+                            <label asp-for="OrderDate">Ngày đặt</label>
+							<input asp-for="OrderDate" type="date" class="form-control border-primary p-2" placeholder="Ngày đặt">
+						</div>
+                        <div class="col-lg-4 col-md-6">
+                                <label asp-for="NumberOfPeople">Số lượng người</label>
+                                <select asp-for="NumberOfPeople" class="form-select border-primary p-2" aria-label="Default select example">
+                                    <option selected>Số người</option>
+                                    <option value="4">4 người</option>
+                                    <option value="8">8 người</option>
+                                    <option value="10">10 người</option>
+                                </select>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <label></label>
+                            <textarea asp-for="SpecialRequest" type="mobile" class="form-control border-primary p-2" placeholder="Yêu cầu đặc biệt"></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill" onclick="showMessageBox('Tin nhắn đã được gửi!')">Gửi ngay</button>
+                        </div>
+                        </div>
+                        </form>
+                  
+                </div>
+            </div>
+            <div class="col-1">
+                <img src="img/background-site.jpg" class="img-fluid h-100 w-100 rounded-end" style="object-fit: cover; opacity: 0.7;" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Book Us End -->

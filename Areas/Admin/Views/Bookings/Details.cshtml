@@ -1,0 +1,58 @@
+﻿@model DoAnLTWeb2.Models.Booking
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<main id="main" class="main">
+
+<h1>Chi tiết</h1>
+
+<div>
+    <h4>Đặt bàn</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên khách
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CusName)
+        </dd>
+        <dt class = "col-sm-2">
+            Số điện thoại
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            Ngày đặt
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+        <dt class = "col-sm-2">
+            Số người
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfPeople)
+        </dd>
+        <dt class = "col-sm-2">
+            Yêu cầu đặc biệt
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SpecialRequest)
+        </dd>
+    </dl>
+</div>
+<div>
+        <a asp-action="Index" class="btn btn-primary">Quay lại</a>
+</div>
+</main>
